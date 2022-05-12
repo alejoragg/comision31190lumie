@@ -1,15 +1,15 @@
 import React from 'react'
-import logo from './logo.svg';
 import './App.css';
+import CountFunction from './components/CountFunction/CountFunction';
 import NavBar from './components/NavBar/NavBar';
-
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <NavBar />
-      </header>
+        <CountFunction />
+        <ItemListContainer greeting="Hola Coders"/>
     </div>
   );
 }
