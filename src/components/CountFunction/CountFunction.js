@@ -1,30 +1,37 @@
 import { useState } from 'react'
 import Button from '../Button/Button'
 
-const CountFunction = (props) => {
-    // const state = useState(10)
-    // const count = state[0]
-    // const setCount = state[1]
-    console.log(props.children)
-    const [count, setCount] = useState(0)
 
+const CountFunction = (props) => {
+    const [data, setData] = useState({
+        count: 0,
+        title: 'hola'
+    })
 
     const decrement = () => {
-        setCount(count - 1)
+        setData({ ...data, count: data.count -1 })
     }
 
     const increment = () => {
-        if(count < 5) {
-            setCount(count + 1)
-        }
+        setData({ ...data, count: data.count + 1 })
     }
 
+    const changeTitle = () => {
+        setData({ 
+            ...data, 
+            title: data.title === 'hola' ? 'chau' : 'hola'
+        })
+    }
+
+    // setData({ ...data })
+    
     return(
         <div style={{ display: 'flex'}}>
-            { props.children }
+            { data.title }
             <Button handleClick={decrement} label='-' color='red' />
-            <h1>{count}</h1>
+            <h1>{data.count}</h1>
             <Button handleClick={increment} label='+' color='green' />
+            <button onClick={changeTitle}>Cambiar Titulo</button>
         </div>
     )
 }
