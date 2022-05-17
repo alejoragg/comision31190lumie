@@ -1,30 +1,34 @@
-import { useState } from 'react'
-import Button from '../Button/Button'
+import { useState, useEffect } from 'react'
 
-const CountFunction = (props) => {
-    // const state = useState(10)
-    // const count = state[0]
-    // const setCount = state[1]
-    console.log(props.children)
+const CountFunction = () => {
     const [count, setCount] = useState(0)
 
+    useEffect(() => {
+        console.log('Me ejecuto despues del montaje')
+
+        return () => {
+            console.log('Me ejecuto antes de desmontarme')
+        }
+    }, [])
 
     const decrement = () => {
-        setCount(count - 1)
-    }
-
-    const increment = () => {
-        if(count < 5) {
-            setCount(count + 1)
+        for(let i = 0; i < 5; i ++) {
+            console.log(`vuelta ${i + 1}`)
+            setCount((count) => count - 1)
         }
     }
 
+    const increment = () => {
+        setCount(count + 1)
+    }
+
+    console.log('ejecuto antes de montar')
+
     return(
         <div style={{ display: 'flex'}}>
-            { props.children }
-            <Button handleClick={decrement} label='-' color='red' />
+            <button onClick={decrement}>-</button>
             <h1>{count}</h1>
-            <Button handleClick={increment} label='+' color='green' />
+            <button onClick={increment}>+</button>
         </div>
     )
 }
