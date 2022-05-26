@@ -17,8 +17,8 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
    }
 
    return(
-       <div align="center">          
-           <table >
+       <div className='Counter'>          
+           {/* <table >
                <tbody>
                    <tr>
                        <td align="left"><button className="Option" onClick={decrement}>-</button></td>
@@ -29,7 +29,15 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
                        <td align="center" colSpan="5"><button className="Option" onClick={() => onAdd(quantity)}>Agregar al carrito</button></td>
                    </tr>
                </tbody>
-           </table>       
+           </table>        */}
+            <div style={{ display: 'flex', justifyContent: 'center'}}>
+                <button className="Button" onClick={decrement}>-</button>
+                <h4 className='Number'>{quantity}</h4>
+                <button className="Button" onClick={increment}>+</button>
+            </div>
+            <div>
+                <button className="Button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
+            </div>
        </div>
    )
 
