@@ -35,3 +35,8 @@
     padding: 20px;
     margin: 0;
 }
+
+.Controls {
+    display: flex;
+    justify-content: center;
+}

@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-// import ItemCount from './components/ItemCount/ItemCount';
-// import MercadoLibre from './components/MercadoLibre/MercadoLibre';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
