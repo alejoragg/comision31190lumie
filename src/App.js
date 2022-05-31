@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollAnimation from './components/ScrollAnimation/ScrollAnimation';
+import MercadoLibre from './components/MercadoLibre/MercadoLibre';
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
             <Route path='*' element={<h1>PAGE NOT FOUND 404</h1>} />
           </Routes>
         </BrowserRouter>
+        {/* <ScrollAnimation />
+        {/* <MercadoLibre /> */}
     </div>
   );
 }

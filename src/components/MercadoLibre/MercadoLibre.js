@@ -25,11 +25,20 @@ const MercadoLibre = () => {
             })
     }
 
+    const handleKeyDown = (e) => {
+        if(e.code === 'Space') {
+            e.preventDefault()
+        }
+    }
+
     return (
         <div>
             <h1>Mercado Libre</h1>
             <form onSubmit={handleSearch}>
-                <input type='text' onChange={(e) => setInput(e.target.value)}/>
+                <input type='text' 
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                />
                 <button type='submit'>Buscar</button>
             </form>
             <ul>
