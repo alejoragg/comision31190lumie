@@ -11,7 +11,7 @@ import { NotificationProvider } from './notification/Notification';
 
 
 
-const App = () => {
+const App = () => { 
   return (
     <div className="App">
         <CartContextProvider>
