@@ -1,11 +1,10 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 import { Link, NavLink } from 'react-router-dom'
 import CartContext from '../../context/CartContext'
 
 const NavBar = () => {
-
   const { getQuantity } = useContext(CartContext)
 
   const quantity = getQuantity()

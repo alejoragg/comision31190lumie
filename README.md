@@ -1,10 +1,24 @@
-Documentar
+# Ecommerce
 
-para inicialeizar el proeyecto
+> Ecommerce with Firebase.
 
-clonar, install, start
+## Running Locally
 
-si estoy en la ruta / se va a montar ItemListContainer, este componente carga un listado de productos.
+```bash
+$ git clone https://github.com/szuviria/comision31190lumie.git
+$ cd comision31190lumie
+$ npm install
+$ npm start
+```
 
+## Environment Variables
 
-![alt text](./public/images/cart.svg "Title")
+See [`.env.example`](https://github.com/szuviria/comision31190lumie/blob/main/.env.example) for an example.
+
+## Built Using
+
+- [Create-React-App](https://create-react-app.dev/)
+
+## Test App 
+
+[Deploy]()

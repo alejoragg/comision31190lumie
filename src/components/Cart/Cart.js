@@ -5,6 +5,7 @@ import CartItem from '../CartItem/CartItem'
 import { addDoc, collection, updateDoc, doc, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 import { db, collectionsName } from '../../services/firebase'
 import { useNotification } from '../../notification/Notification'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
     const [loading, setLoading] = useState(false)
@@ -12,6 +13,8 @@ const Cart = () => {
     const { cart, clearCart, getTotal, getQuantity } = useContext(CartContext)  
 
     const { setNotification } = useNotification()
+
+    const navigate = useNavigate()
 
     const createOrder = () => {
         console.log('crear orden')
@@ -60,6 +63,7 @@ const Cart = () => {
                 batch.commit()
                 clearCart()
                 setNotification('success',`El id de la orden es: ${id}`)
+                navigate('/')
             }).catch(error => {
                 console.log(error)
                 setNotification('error',`Algunos productos no tienen stock`)
